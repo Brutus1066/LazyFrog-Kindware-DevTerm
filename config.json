@@ -1,0 +1,41 @@
+{
+  "application": {
+    "name": "LazyFrog DevTerm",
+    "version": "1.1.1",
+    "author": "Kindware.dev",
+    "github": "https://github.com/Brutus1066/LazyFrog-Kindware-DevTerm"
+  },
+  "github": {
+    "apiBaseUrl": "https://api.github.com",
+    "resultsPerPage": 10,
+    "defaultSort": "stars",
+    "defaultOrder": "desc",
+    "rateLimitDelay": 1000
+  },
+  "ui": {
+    "theme": "default",
+    "refreshRate": 1000,
+    "menuWidth": 18,
+    "showBorder": true,
+    "colors": {
+      "header": "Cyan",
+      "menu": "Yellow",
+      "menuSelected": "Green",
+      "content": "White",
+      "footer": "DarkGray",
+      "error": "Red",
+      "success": "Green",
+      "warning": "Yellow"
+    }
+  },
+  "paths": {
+    "results": "./results",
+    "history": "./history",
+    "watchlist": "./watchlist.json"
+  },
+  "system": {
+    "refreshInterval": 2000,
+    "showNetworkInfo": true,
+    "showDiskInfo": true
+  }
+}

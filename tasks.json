@@ -1,0 +1,71 @@
+{
+  "tasks": [
+    {
+      "id": "1",
+      "name": "Git Status",
+      "command": "git status",
+      "description": "Show the working tree status",
+      "category": "Git"
+    },
+    {
+      "id": "2",
+      "name": "Git Pull",
+      "command": "git pull",
+      "description": "Fetch and integrate with remote",
+      "category": "Git"
+    },
+    {
+      "id": "3",
+      "name": "Git Log",
+      "command": "git log --oneline -10",
+      "description": "Show last 10 commits",
+      "category": "Git"
+    },
+    {
+      "id": "4",
+      "name": "NPM Install",
+      "command": "npm install",
+      "description": "Install Node.js dependencies",
+      "category": "Node.js"
+    },
+    {
+      "id": "5",
+      "name": "NPM Build",
+      "command": "npm run build",
+      "description": "Build the project",
+      "category": "Node.js"
+    },
+    {
+      "id": "6",
+      "name": "Docker PS",
+      "command": "docker ps",
+      "description": "List running containers",
+      "category": "Docker"
+    },
+    {
+      "id": "7",
+      "name": "System Info",
+      "command": "systeminfo | Select-String 'OS','Memory'",
+      "description": "Quick system information",
+      "category": "System"
+    },
+    {
+      "id": "8",
+      "name": "List Processes",
+      "command": "Get-Process | Sort-Object CPU -Descending | Select-Object -First 10",
+      "description": "Top 10 CPU-consuming processes",
+      "category": "System"
+    }
+  ],
+  "history": {
+    "startTime": "2026-01-27T22:51:42",
+    "exitCode": 128,
+    "taskId": "1",
+    "taskName": "Git Status",
+    "endTime": "2026-01-27T22:51:42",
+    "output": "",
+    "duration": 0.07,
+    "command": "git status",
+    "success": false
+  }
+}

@@ -1,0 +1,48 @@
+# LazyFrog DevTerm - Git Ignore
+
+# Build output
+/dist/
+/test/
+/backups/
+*.exe
+*.zip
+
+# Original screenshots folder (use docs/assets instead)
+/LazyFrog-Kindware-DevTerm-SCREENSHOTS/
+
+# Results and history (user data)
+/results/*.json
+/results/*.md
+/history/*.json
+
+# Keep directories but ignore contents
+!/results/.gitkeep
+!/history/.gitkeep
+
+# IDE and editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Windows
+Thumbs.db
+Desktop.ini
+desktop.launcher.icon.ico/
+
+# macOS
+.DS_Store
+
+# PowerShell
+*.ps1.bak
+
+# Logs
+*.log
+
+# Temporary files
+*.tmp
+*.temp
+
+# Misc
+*.sed
