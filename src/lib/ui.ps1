@@ -2,7 +2,7 @@
 .SYNOPSIS
     Modern UI Rendering Library for LazyFrog Developer Tools
 .DESCRIPTION
-    Modern TUI rendering with colors, gradients, and modern styling
+    KINDWARE Rainbow CLI TUI with modern styling for PowerShell 7+
 .AUTHOR
     Kindware.dev
 .VERSION
@@ -10,7 +10,22 @@
 #>
 
 # ============================================================================
-# COLOR THEME - Cyberpunk Frog (Cyan/Magenta/Green gradient)
+# KINDWARE RAINBOW COLORS - ANSI Escape Codes for PowerShell 7+
+# ============================================================================
+$script:ANSI = @{
+    Red     = "`e[91m"   # Bright Red
+    Green   = "`e[92m"   # Bright Green
+    Yellow  = "`e[93m"   # Bright Yellow
+    Blue    = "`e[94m"   # Bright Blue
+    Magenta = "`e[95m"   # Bright Magenta
+    Cyan    = "`e[96m"   # Bright Cyan
+    White   = "`e[97m"   # Bright White
+    Gray    = "`e[90m"   # Dark Gray
+    Reset   = "`e[0m"    # Reset to default
+}
+
+# ============================================================================
+# COLOR THEME - KINDWARE Rainbow Style
 # ============================================================================
 $script:Theme = @{
     # Primary colors
@@ -20,7 +35,7 @@ $script:Theme = @{
     AccentSoft    = "DarkGray"
     
     # UI colors
-    Border        = "DarkCyan"
+    Border        = "Cyan"
     BorderLight   = "Cyan"
     BorderDark    = "DarkCyan"
     Header        = "Cyan"
@@ -44,6 +59,29 @@ $script:Theme = @{
     MenuKey       = "Yellow"
     MenuHot       = "Cyan"
 }
+
+# ============================================================================
+# KINDWARE RAINBOW ASCII LOGO
+# ============================================================================
+function Show-KindwareLogo {
+    Write-Host ""
+    Write-Host "    `e[91m██╗  ██╗`e[93m██╗`e[92m███╗   ██╗`e[96m██████╗ `e[94m██╗    ██╗`e[95m █████╗ `e[91m██████╗ `e[93m███████╗`e[0m"
+    Write-Host "    `e[91m██║ ██╔╝`e[93m██║`e[92m████╗  ██║`e[96m██╔══██╗`e[94m██║    ██║`e[95m██╔══██╗`e[91m██╔══██╗`e[93m██╔════╝`e[0m"
+    Write-Host "    `e[91m█████╔╝ `e[93m██║`e[92m██╔██╗ ██║`e[96m██║  ██║`e[94m██║ █╗ ██║`e[95m███████║`e[91m██████╔╝`e[93m█████╗  `e[0m"
+    Write-Host "    `e[91m██╔═██╗ `e[93m██║`e[92m██║╚██╗██║`e[96m██║  ██║`e[94m██║███╗██║`e[95m██╔══██║`e[91m██╔══██╗`e[93m██╔══╝  `e[0m"
+    Write-Host "    `e[91m██║  ██╗`e[93m██║`e[92m██║ ╚████║`e[96m██████╔╝`e[94m╚███╔███╔╝`e[95m██║  ██║`e[91m██║  ██║`e[93m███████╗`e[0m"
+    Write-Host "    `e[91m╚═╝  ╚═╝`e[93m╚═╝`e[92m╚═╝  ╚═══╝`e[96m╚═════╝ `e[94m ╚══╝╚══╝ `e[95m╚═╝  ╚═╝`e[91m╚═╝  ╚═╝`e[93m╚══════╝`e[0m"
+    Write-Host ""
+}
+
+# ============================================================================
+# KINDWARE STATUS MESSAGES
+# ============================================================================
+function Write-KindSuccess { param([string]$Message) Write-Host "  `e[92m✔`e[0m $Message" }
+function Write-KindError   { param([string]$Message) Write-Host "  `e[91m✖`e[0m $Message" }
+function Write-KindWarning { param([string]$Message) Write-Host "  `e[93m⚠`e[0m $Message" }
+function Write-KindInfo    { param([string]$Message) Write-Host "  `e[96m◆`e[0m $Message" }
+function Write-KindPrompt  { param([string]$Message) Write-Host "  `e[95m▶`e[0m $Message" -NoNewline }
 
 # ============================================================================
 # UI STATE
@@ -135,18 +173,23 @@ function Write-SectionHeader {
     param(
         [string]$Icon,
         [string]$Title,
-        [string]$RightTag = "LAZYFROG"
+        [string]$RightTag = "KINDWARE"
     )
     $width = $script:UIState.Width
     Write-Host ""
-    Write-Rule -Width $width -Char "=" -Color $script:Theme.Border
+    Write-Host "  `e[96m═`e[0m" -NoNewline
+    Write-Host ("`e[96m═`e[0m" * ($width - 4)) -NoNewline
+    Write-Host "`e[96m═`e[0m"
     Write-Host "  " -NoNewline
     Write-Host $Icon -ForegroundColor $script:Theme.Secondary -NoNewline
     Write-Host " $Title" -ForegroundColor $script:Theme.Primary -NoNewline
     $spacer = " " * [Math]::Max(1, $width - ($Title.Length + $Icon.Length + $RightTag.Length + 6))
     Write-Host $spacer -NoNewline
-    Write-Host $RightTag -ForegroundColor $script:Theme.HeaderAccent
-    Write-Rule -Width $width -Char "=" -Color $script:Theme.Border
+    # Rainbow KINDWARE tag
+    Write-Host "`e[91mK`e[93mI`e[92mN`e[96mD`e[94mW`e[95mA`e[91mR`e[93mE`e[0m"
+    Write-Host "  `e[96m═`e[0m" -NoNewline
+    Write-Host ("`e[96m═`e[0m" * ($width - 4)) -NoNewline
+    Write-Host "`e[96m═`e[0m"
     Write-Host ""
 }
 
@@ -214,13 +257,13 @@ function Write-MenuRow {
 }
 
 function Write-FrogLogo {
-    Write-Host "" 
-    Write-Host "  " -NoNewline
-    Write-Host "LAZYFROG" -ForegroundColor $script:Theme.Primary -NoNewline
-    Write-Host " DEVTERM" -ForegroundColor $script:Theme.Text -NoNewline
-    Write-Host "" 
-    Write-Host "  " -NoNewline
-    Write-Host "Kindware.dev" -ForegroundColor $script:Theme.AccentSoft
+    # Show KINDWARE rainbow ASCII art logo
+    Show-KindwareLogo
+    
+    Write-Host "                    `e[92m◆ LazyFrog DevTerm v2.0.0`e[0m"
+    Write-Host "              `e[90m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━`e[0m"
+    Write-Host "               `e[96m🐸 Terminal Utility Suite for Devs`e[0m"
+    Write-Host "               `e[90mcreated by LazyFrog-kz | kindware.dev`e[0m"
     Write-Host ""
 }
 
@@ -258,27 +301,32 @@ function Reset-UI {
 }
 
 # ============================================================================
-# MODERN HEADER WITH BRANDING
+# MODERN HEADER WITH KINDWARE BRANDING
 # ============================================================================
 function Show-Header {
     $width = $script:UIState.Width
 
     Write-Host ""
-    Write-Rule -Width $width -Char "═" -Color $script:Theme.Border
+    Write-Host "  `e[96m═`e[0m" -NoNewline
+    Write-Host ("`e[96m═`e[0m" * ($width - 4)) -NoNewline
+    Write-Host "`e[96m═`e[0m"
     Write-Host "  " -NoNewline
-    Write-Colored -Text "LAZYFROG" -ForegroundColor $script:Theme.Primary -NoNewline
-    Write-Colored -Text " DEVTERM" -ForegroundColor $script:Theme.Text -NoNewline
+    Write-Host "`e[91mK`e[93mI`e[92mN`e[96mD`e[94mW`e[95mA`e[91mR`e[93mE`e[0m" -NoNewline
+    Write-Host " | " -ForegroundColor $script:Theme.TextDim -NoNewline
+    Write-Colored -Text "LazyFrog DevTerm" -ForegroundColor $script:Theme.Primary -NoNewline
     $right = "kindware.dev"
-    $spacer = " " * [Math]::Max(1, $width - ($right.Length + "LAZYFROG DEVTERM".Length + 4))
+    $spacer = " " * [Math]::Max(1, $width - ($right.Length + "KINDWARE | LazyFrog DevTerm".Length + 4))
     Write-Host $spacer -NoNewline
     Write-Colored -Text $right -ForegroundColor $script:Theme.Secondary -NoNewline
     Write-Host ""
-    Write-Rule -Width $width -Char "─" -Color $script:Theme.BorderDark
+    Write-Host "  `e[96m─`e[0m" -NoNewline
+    Write-Host ("`e[90m─`e[0m" * ($width - 4)) -NoNewline
+    Write-Host "`e[96m─`e[0m"
     Write-Host ""
 }
 
 # ============================================================================
-# MAIN MENU - MODERN STYLE
+# MAIN MENU - KINDWARE RAINBOW STYLE
 # ============================================================================
 function Show-MainMenu {
     param(
@@ -291,73 +339,64 @@ function Show-MainMenu {
     Show-Header
     
     $width = $script:UIState.Width
-    $boxWidth = [Math]::Min(78, $width - 4)
+    $boxWidth = 37
 
     Write-FrogLogo
-    Write-Host "  " -NoNewline
-    Write-Host "LAZYFROG DEVTERM" -ForegroundColor $script:Theme.Primary -NoNewline
-    Write-Host "  " -ForegroundColor $script:Theme.TextDim -NoNewline
-    Write-Host "Modern terminal tooling for Windows" -ForegroundColor $script:Theme.TextDim
-    Write-Host ""
 
+    # Menu items with emojis - KINDWARE style
     $menuItems = @(
-        @{ Key = "1"; Name = "GitHub Scanner"; Desc = "Search & explore repositories" }
-        @{ Key = "2"; Name = "Task Runner"; Desc = "Execute custom commands" }
-        @{ Key = "3"; Name = "System Monitor"; Desc = "Real-time performance metrics" }
-        @{ Key = "4"; Name = "Help & Docs"; Desc = "Documentation & shortcuts" }
-        @{ Key = "Q"; Name = "Exit"; Desc = "Close application" }
+        @{ Key = "1"; Emoji = "🔍"; Name = "GitHub Scanner"; Color = "`e[93m" }
+        @{ Key = "2"; Emoji = "⚙️"; Name = "Task Runner"; Color = "`e[92m" }
+        @{ Key = "3"; Emoji = "📊"; Name = "System Monitor"; Color = "`e[96m" }
+        @{ Key = "4"; Emoji = "❓"; Name = "Help & Docs"; Color = "`e[95m" }
+        @{ Key = "Q"; Emoji = "  "; Name = "Quit"; Color = "`e[90m" }
     )
 
-    Write-Host "  " -NoNewline
-    Write-Host "+" -ForegroundColor $script:Theme.Border -NoNewline
-    Write-Host ("-" * $boxWidth) -ForegroundColor $script:Theme.Border -NoNewline
-    Write-Host "+" -ForegroundColor $script:Theme.Border
-    Write-BoxLine -Left "Select a module" -Right "LazyFrog DevTerm" -Width $boxWidth -BorderColor $script:Theme.Border
-    Write-Host "  " -NoNewline
-    Write-Host "+" -ForegroundColor $script:Theme.Border -NoNewline
-    Write-Host ("-" * $boxWidth) -ForegroundColor $script:Theme.Border -NoNewline
-    Write-Host "+" -ForegroundColor $script:Theme.Border
-
+    # Top border with rounded corners
+    Write-Host "    `e[96m╭$("─" * $boxWidth)╮`e[0m"
+    
     for ($i = 0; $i -lt $menuItems.Count; $i++) {
         $item = $menuItems[$i]
-        Write-MenuRow -Index $i -Key $item.Key -Label $item.Name -Desc $item.Desc -SelectedIndex $SelectedIndex -Width $boxWidth
+        $isSelected = ($i -eq $SelectedIndex)
+        $padding = $boxWidth - $item.Name.Length - 8
+        
+        Write-Host "    `e[96m│`e[0m  " -NoNewline
+        if ($isSelected) {
+            Write-Host "`e[97m[▶]`e[0m " -NoNewline
+        } else {
+            Write-Host "`e[97m[$($item.Key)]`e[0m " -NoNewline
+        }
+        Write-Host "$($item.Color)$($item.Emoji) $($item.Name)`e[0m" -NoNewline
+        Write-Host (" " * [Math]::Max(1, $padding)) -NoNewline
+        Write-Host "`e[96m│`e[0m"
     }
-
-    Write-Host "  " -NoNewline
-    Write-Host "+" -ForegroundColor $script:Theme.Border -NoNewline
-    Write-Host ("-" * $boxWidth) -ForegroundColor $script:Theme.Border -NoNewline
-    Write-Host "+" -ForegroundColor $script:Theme.Border
+    
+    # Bottom border with rounded corners
+    Write-Host "    `e[96m╰$("─" * $boxWidth)╯`e[0m"
 
     Write-Host ""
-    Write-Rule -Width $width -Char "-" -Color $script:Theme.Border
+    Write-Host "  `e[90m─`e[0m" -NoNewline
+    Write-Host ("`e[90m─`e[0m" * ($width - 6)) -NoNewline
+    Write-Host "`e[90m─`e[0m"
 
     Write-Host "  " -NoNewline
-    Write-Host "[Up/Down]" -ForegroundColor $script:Theme.MenuKey -NoNewline
+    Write-Host "`e[97m[Up/Down]`e[0m" -NoNewline
     Write-Host " Navigate  " -ForegroundColor $script:Theme.TextDim -NoNewline
-    Write-Host "[Enter]" -ForegroundColor $script:Theme.MenuKey -NoNewline
+    Write-Host "`e[97m[Enter]`e[0m" -NoNewline
     Write-Host " Select  " -ForegroundColor $script:Theme.TextDim -NoNewline
-    Write-Host "[1-4]" -ForegroundColor $script:Theme.MenuKey -NoNewline
+    Write-Host "`e[97m[1-4]`e[0m" -NoNewline
     Write-Host " Quick Jump  " -ForegroundColor $script:Theme.TextDim -NoNewline
-    Write-Host "[Q]" -ForegroundColor $script:Theme.MenuKey -NoNewline
+    Write-Host "`e[97m[Q]`e[0m" -NoNewline
     Write-Host " Quit" -ForegroundColor $script:Theme.TextDim
 
     if (-not [string]::IsNullOrEmpty($StatusMessage)) {
         Write-Host ""
-        $statusColor = switch ($StatusType) {
-            "success" { $script:Theme.Success }
-            "warning" { $script:Theme.Warning }
-            "error"   { $script:Theme.Error }
-            default   { $script:Theme.Info }
+        switch ($StatusType) {
+            "success" { Write-KindSuccess $StatusMessage }
+            "warning" { Write-KindWarning $StatusMessage }
+            "error"   { Write-KindError $StatusMessage }
+            default   { Write-KindInfo $StatusMessage }
         }
-        $statusIcon = switch ($StatusType) {
-            "success" { "[OK]" }
-            "warning" { "[!]" }
-            "error"   { "[X]" }
-            default   { "[i]" }
-        }
-        Write-Host "  " -NoNewline
-        Write-Host $statusIcon -ForegroundColor $statusColor -NoNewline
-        Write-Host " $StatusMessage" -ForegroundColor $script:Theme.Text
     }
 
     Write-StatusBar -Left "Press Q to exit" -Right (Get-Date -Format "HH:mm")

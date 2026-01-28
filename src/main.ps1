@@ -2,18 +2,18 @@
 .SYNOPSIS
     LazyFrog Developer Tools - Main Application Entry Point
 .DESCRIPTION
-    Modern TUI-based developer utility suite for Windows Terminal.
+    KINDWARE Rainbow CLI TUI developer utility suite for Windows Terminal.
     Modern colorful interface with GitHub Scanner, Task Runner, System Monitor, and Help.
 .AUTHOR
     Kindware.dev
 .VERSION
     2.0.0
 .NOTES
-    Requires PowerShell 5.1 or higher (PowerShell 7+ recommended)
+    Requires PowerShell 7+ for KINDWARE rainbow ANSI color support
     Designed for Windows Terminal with full color support
 #>
 
-#Requires -Version 5.1
+#Requires -Version 7.0
 
 $ErrorActionPreference = "Stop"
 
@@ -102,35 +102,18 @@ function Exit-Application {
     [Console]::CursorVisible = $true
     Clear-Host
     
-    # Styled exit message
+    # KINDWARE styled exit message
     Write-Host ""
-    Write-Host "  " -NoNewline
-    Write-Host "Thanks for using " -ForegroundColor White -NoNewline
-    Write-Host "LazyFrog" -ForegroundColor Cyan -NoNewline
-    Write-Host " Developer Tools!" -ForegroundColor White
+    Write-Host "    `e[91m██╗  ██╗`e[93m██╗`e[92m███╗   ██╗`e[96m██████╗ `e[94m██╗    ██╗`e[95m █████╗ `e[91m██████╗ `e[93m███████╗`e[0m"
+    Write-Host "    `e[91m██║ ██╔╝`e[93m██║`e[92m████╗  ██║`e[96m██╔══██╗`e[94m██║    ██║`e[95m██╔══██╗`e[91m██╔══██╗`e[93m██╔════╝`e[0m"
+    Write-Host "    `e[91m█████╔╝ `e[93m██║`e[92m██╔██╗ ██║`e[96m██║  ██║`e[94m██║ █╗ ██║`e[95m███████║`e[91m██████╔╝`e[93m█████╗  `e[0m"
+    Write-Host "    `e[91m██╔═██╗ `e[93m██║`e[92m██║╚██╗██║`e[96m██║  ██║`e[94m██║███╗██║`e[95m██╔══██║`e[91m██╔══██╗`e[93m██╔══╝  `e[0m"
+    Write-Host "    `e[91m██║  ██╗`e[93m██║`e[92m██║ ╚████║`e[96m██████╔╝`e[94m╚███╔███╔╝`e[95m██║  ██║`e[91m██║  ██║`e[93m███████╗`e[0m"
+    Write-Host "    `e[91m╚═╝  ╚═╝`e[93m╚═╝`e[92m╚═╝  ╚═══╝`e[96m╚═════╝ `e[94m ╚══╝╚══╝ `e[95m╚═╝  ╚═╝`e[91m╚═╝  ╚═╝`e[93m╚══════╝`e[0m"
     Write-Host ""
-    Write-Host "  " -NoNewline
-    Write-Host "Powered by " -ForegroundColor DarkGray -NoNewline
-    Write-Host "Kindware.dev" -ForegroundColor Magenta
+    Write-Host "  `e[92m✔`e[0m Thanks for using `e[96mLazyFrog`e[0m Developer Tools!"
     Write-Host ""
-    Write-Host "       " -NoNewline
-    Write-Host "_____" -ForegroundColor Cyan
-    Write-Host "      " -NoNewline
-    Write-Host "/ " -ForegroundColor Cyan -NoNewline
-    Write-Host "o  o" -ForegroundColor White -NoNewline
-    Write-Host " \" -ForegroundColor Cyan
-    Write-Host "     " -NoNewline
-    Write-Host "|" -ForegroundColor Cyan -NoNewline
-    Write-Host "__" -ForegroundColor Magenta -NoNewline
-    Write-Host "_/\_" -ForegroundColor Cyan -NoNewline
-    Write-Host "__" -ForegroundColor Magenta -NoNewline
-    Write-Host "|" -ForegroundColor Cyan
-    Write-Host "       " -NoNewline
-    Write-Host "/\   /\" -ForegroundColor Cyan
-    Write-Host "      " -NoNewline
-    Write-Host "/  \_/  \" -ForegroundColor Magenta
-    Write-Host "     " -NoNewline
-    Write-Host "/_________\" -ForegroundColor Green
+    Write-Host "  `e[90mGoodbye! Powered by`e[0m `e[95mkindware.dev`e[0m"
     Write-Host ""
 }
 

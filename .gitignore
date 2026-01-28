@@ -12,8 +12,9 @@
 !/release/Build-Release.ps1
 !/release/README.md
 
-# Original screenshots folder (use docs/assets instead)
-/LazyFrog-Kindware-DevTerm-SCREENSHOTS/
+# AI/Claude working files
+/.claude/
+KINDWARE-CLI-STYLE-GUIDE.md
 
 # Results and history (user data)
 /results/*.json

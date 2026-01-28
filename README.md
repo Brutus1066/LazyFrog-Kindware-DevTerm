@@ -1,19 +1,33 @@
-# 🐸 LazyFrog DevTerm
-
-<p align="center">
-  <img src="docs/assets/MainScreenshot.png" alt="LazyFrog DevTerm" width="600"/>
-</p>
-
-<p align="center">
-  <strong>A keyboard-first terminal utility for developers who stay in the shell</strong>
-</p>
-
 <p align="center">
   <img src="https://img.shields.io/badge/PowerShell-7%2B-5391FE?style=for-the-badge&logo=powershell&logoColor=white" alt="PowerShell 7+"/>
   <img src="https://img.shields.io/badge/Platform-Windows%2010%2F11-0078D6?style=for-the-badge&logo=windows&logoColor=white" alt="Windows"/>
   <img src="https://img.shields.io/github/license/Brutus1066/LazyFrog-Kindware-DevTerm?style=for-the-badge" alt="License"/>
   <img src="https://img.shields.io/github/v/release/Brutus1066/LazyFrog-Kindware-DevTerm?style=for-the-badge&color=brightgreen" alt="Release"/>
 </p>
+
+<h1 align="center">🐸 LazyFrog DevTerm</h1>
+
+<h3 align="center">Modern Terminal Utility Suite for Developers</h3>
+
+<p align="center">
+  <em>A keyboard-first TUI for developers who stay in the shell</em>
+</p>
+
+```
+    ██╗  ██╗██╗███╗   ██╗██████╗ ██╗    ██╗ █████╗ ██████╗ ███████╗
+    ██║ ██╔╝██║████╗  ██║██╔══██╗██║    ██║██╔══██╗██╔══██╗██╔════╝
+    █████╔╝ ██║██╔██╗ ██║██║  ██║██║ █╗ ██║███████║██████╔╝█████╗
+    ██╔═██╗ ██║██║╚██╗██║██║  ██║██║███╗██║██╔══██║██╔══██╗██╔══╝
+    ██║  ██╗██║██║ ╚████║██████╔╝╚███╔███╔╝██║  ██║██║  ██║███████╗
+    ╚═╝  ╚═╝╚═╝╚═╝  ╚═══╝╚═════╝  ╚══╝╚══╝ ╚═╝  ╚═╝╚═╝  ╚═╝╚══════╝
+
+                    ◆ LazyFrog DevTerm v2.0.0
+              ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+               🐸 Terminal Utility Suite for Devs
+               created by LazyFrog-kz | kindware.dev
+```
+
+> **🌈 KINDWARE Rainbow CLI** — PowerShell 7+ with beautiful ANSI colors!
 
 <p align="center">
   <a href="#-features">Features</a> •
@@ -26,11 +40,27 @@
 
 ---
 
+<p align="center">
+  <img src="docs/assets/MainScreenshot.png" alt="LazyFrog DevTerm" width="600"/>
+</p>
+
+---
+
 ## 💡 Why LazyFrog?
 
 **The Problem:** You're constantly switching between terminal, browser, and system tools. Opening Task Manager for a quick health check. Googling for that GitHub repo again. Hunting for that command you ran last week.
 
 **The Solution:** One TUI, all your daily tools. Search GitHub repos, run saved commands, monitor system health — all without leaving the terminal. Keyboard-driven, zero bloat, 100% offline-capable.
+
+```
+    ╭─────────────────────────────────────╮
+    │  [1] 🔍 GitHub Scanner              │
+    │  [2] ⚙️  Task Runner                 │
+    │  [3] 📊 System Monitor              │
+    │  [4] ❓ Help & Docs                 │
+    │  [Q]    Quit                        │
+    ╰─────────────────────────────────────╯
+```
 
 | | |
 |---|---|
@@ -268,11 +298,11 @@ MIT License — see [LICENSE](LICENSE) for details.
 ---
 
 <p align="center">
-  <strong>LazyFrog DevTerm</strong> | <a href="https://kindware.dev">kindware.dev</a> • <a href="https://github.com/Brutus1066">GitHub</a>
+  <em>Made with 🐸 for developers who live in the terminal</em>
 </p>
 
 <p align="center">
-  Made with 🐸 by <a href="https://github.com/Brutus1066">Brutus1066</a> at <a href="https://kindware.dev">LAZYFROG-kindware.dev</a>
+  <a href="https://kindware.dev">kindware.dev</a>
 </p>
 
 <p align="center">

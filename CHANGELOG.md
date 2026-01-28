@@ -1,5 +1,24 @@
 # Changelog
 
+## 2.0.0 - 2026-01-28
+
+### ✨ KINDWARE Rainbow CLI Styling
+- **Rainbow KINDWARE ASCII Logo** - Beautiful multi-color ASCII art header with gradient colors
+- **PowerShell 7+ Required** - Upgraded from PowerShell 5.1 to 7.0+ for ANSI color support
+- **Modern Box Drawing** - Rounded corners (╭╮╯╰) on menus and UI elements
+- **Emoji Icons** - Visual menu icons (🔍 📊 ⚙️ ❓) for better UX
+- **ANSI Color System** - Full rainbow palette with Red, Yellow, Green, Cyan, Blue, Magenta
+- **Status Message Helpers** - New `Write-KindSuccess`, `Write-KindError`, `Write-KindWarning`, `Write-KindInfo` functions
+- **Rainbow Exit Screen** - Colorful KINDWARE goodbye message on exit
+
+### Changed
+- Version bumped to 2.0.0 to reflect major UI overhaul
+- Updated all documentation with KINDWARE branding
+- Cyan accent colors throughout the UI
+- Modernized header with rainbow KINDWARE styling
+
+---
+
 ## 1.2.0 - 2026-01-28
 
 ### Added
