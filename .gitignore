@@ -5,8 +5,10 @@
 /release/output/
 /test/
 /backups/
-*.exe
 *.zip
+
+# Keep LazyFrog launcher exe
+!LazyFrog.exe
 
 # Keep the release build script and README
 !/release/Build-Release.ps1
