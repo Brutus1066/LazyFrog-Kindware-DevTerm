@@ -149,11 +149,24 @@ pwsh -NoProfile -ExecutionPolicy Bypass -File .\src\main.ps1
 
 | Document | Description |
 |----------|-------------|
+| [Quick Start](docs/QUICK_START.md) | Get running in 2 minutes |
 | [Install](docs/INSTALL.md) | Full installation guide |
 | [Usage](docs/USAGE.md) | Module walkthroughs |
 | [Troubleshooting](docs/TROUBLESHOOTING.md) | Common issues and fixes |
 | [Release Notes](docs/RELEASE-NOTES.md) | What's new |
 | [AI Context](docs/AI_CONTEXT.md) | For tooling and assistants |
+| [Release Build](release/README.md) | Creating distributable packages |
+
+---
+
+## 📦 Downloads
+
+Get the latest release from [GitHub Releases](https://github.com/Brutus1066/LazyFrog-Kindware-DevTerm/releases):
+
+| Download | Description |
+|----------|-------------|
+| `LazyFrog-DevTerm-Setup-vX.X.X.exe` | One-click installer (recommended) |
+| `LazyFrog-DevTerm-vX.X.X.zip` | Portable package |
 
 ---
 

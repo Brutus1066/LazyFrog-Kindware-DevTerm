@@ -2,10 +2,15 @@
 
 # Build output
 /dist/
+/release/output/
 /test/
 /backups/
 *.exe
 *.zip
+
+# Keep the release build script and README
+!/release/Build-Release.ps1
+!/release/README.md
 
 # Original screenshots folder (use docs/assets instead)
 /LazyFrog-Kindware-DevTerm-SCREENSHOTS/

@@ -35,7 +35,7 @@ $ErrorActionPreference = "Stop"
 
 $script:Config = @{
     AppName         = "LazyFrog DevTerm"
-    AppVersion      = "1.1.1"
+    AppVersion      = "1.2.0"
     Publisher       = "Kindware.dev"
     ProjectRoot     = Split-Path -Parent $PSScriptRoot
     ShortcutName    = "LazyFrog DevTerm"
