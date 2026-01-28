@@ -1,18 +1,15 @@
 # LazyFrog DevTerm - Git Ignore
 
-# Build output
+# Build output (keep release folder but ignore temp files)
 /dist/
-/release/output/
 /test/
 /backups/
-*.zip
 
 # Keep LazyFrog launcher exe
 !LazyFrog.exe
 
-# Keep the release build script and README
-!/release/Build-Release.ps1
-!/release/README.md
+# Keep the release folder contents
+!/release/
 
 # AI/Claude working files
 /.claude/
